@@ -24,7 +24,21 @@ result.speakMyValue()
 //3.1 In example 1: 1 is struct type, that why we can send message to 1
 //3.2 in Objective-C Struct and Enum is not object
 
-//4. Variable
+//4. Variable: name of object : name, type, value, size, scope, lifetime...
+let CONSTANT = 1
+var mName = "nguyendat"
+
+//5. Function: execute code: name, param, return, scope, lifetime
+//Execute code at the top level of main.swift will run when program run
+
+//6. Structure of swift file
+// + import                       import UIKit
+// + variable declaration         var name = "nguyendat"
+// + function declaration         func sayName() {print("Name:\(nguyendat)")}
+// + Object type declaration      class AClass {}
+//                                struct AStruct {}
+//                                enum AEnum {}
+
 
 
 
