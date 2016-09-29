@@ -12,7 +12,7 @@ import UIKit
 
 //SWIFT
 //1. Everything is object even primitive type, we can send message to it:
-let result = 1.advancedBy(8)
+let result = 1.advanced(by: 8)
 
 
 //2. We can also extends privitive object type like this
@@ -49,7 +49,7 @@ func sum(first: Int, with number: Int) -> Int {
     return first + number;
 }
 
-sum(12, with: 8)
+sum(first:12, with: 8)
 
 //7.1 A function can externalize name of parameter because of:
 // + Clarity purpose of param
@@ -62,7 +62,7 @@ func doSomething(firstName: String, lastName: String) -> String {
     return "My name is:\(firstName) \(lastName)"
 }
 
-let message = doSomething("Dat", lastName: "Nguyen")
+let message = doSomething(firstName: "Dat", lastName: "Nguyen")
 
 //7.3 Overload: Same name even externalized but difference signature
 
@@ -73,8 +73,8 @@ func doWork(value: String, times: Int=1) {
     }
 }
 //We can omit second param because it already have default value
-doWork("Antonio")
-doWork("Dat", times: 10)
+doWork(value: "Antonio")
+doWork(value: "Dat", times: 10)
 
 //7.5 Variadic parameter
 func variadicFunc(statement: String ..., times: Int) {
@@ -93,27 +93,29 @@ func paramFuncConst(IamLocalVariableAndImplicitConstant: String) {
     
 }
 
-func varParamFuncInside(var varParam: String) {
-    varParam = "Antonio" //Not affect to outside
+func varParamFuncInside(varParam: String) {
+    //varParam = "Antonio" //Not affect to outside
 }
 
 //7.6 Change value of param pass to function
-func varParamOutside(inout varParam: String) {
+func varParamOutside(varParam: inout String) {
     varParam = "Antonio"
 }
 var name="Dat"
-varParamOutside(&name)
+varParamOutside(varParam: &name)
 
 //7.7 UnsafeMutablePointer same as inout
 func CGRectDevide(rect: CGRect,
                   _ slide: UnsafeMutablePointer<CGRect>,
                     _ reminder: UnsafeMutablePointer<CGRect>,
                       _ amount: CGFloat,
-                        _ edge: CGRectEdge)
+                      _ edge: CGRectEdge) {
+    
+}
 
 
-var arrow = CGRectZero
-var body = CGRectZero
-CGRectDevide(&arrow, &body, Arrow.ARHEIGHT, .MinYEdge)
+//var arrow = CGRect
+//var body = CGRect
+//CGRectDevide(&arrow, &body, Arrow.ARHEIGHT, .MinYEdge)
 
 
